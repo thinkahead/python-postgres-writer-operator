@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres-writer-operator
-  namespace: postgres
+  namespace: pg
   labels:
     app: postgres-writer
 spec:
@@ -18,14 +18,14 @@ spec:
       serviceAccountName: postgres-writer
       containers:
       - name: postgres-writer
-        image: postgres-writer:latest
+        image: docker.io/karve/postgres-writer:latest
         imagePullPolicy: IfNotPresent
         env: ##  preferably load this via a configmap or/and secret instead
           - name: PSQL_HOST
-            value: "184.73.10.62"
+            value: pg-svc
           - name: PSQL_USERNAME
-            value: postgres
+            value: postgresadmin
           - name: PSQL_PASSWORD
-            value: password
+            value: test123
           - name: PSQL_DB
-            value: postgres
+            value: postgresdb

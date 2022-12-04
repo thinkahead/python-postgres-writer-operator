@@ -4,7 +4,7 @@ metadata:
   name: admin-access
 subjects:
 - kind: ServiceAccount 
-  namespace: postgres
+  namespace: pg
   name: postgres-writer
 roleRef:
   kind: ClusterRole

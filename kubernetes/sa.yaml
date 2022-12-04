@@ -2,4 +2,4 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: postgres-writer
-  namespace: postgres
+  namespace: pg
